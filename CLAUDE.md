@@ -4,10 +4,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository Overview
 
-This is a reverse prompt tool for generating descriptive text prompts from images using vision models. The main components are:
-- `rprompt.py` - Main Python script for reverse prompting functionality
-- `requirements.txt` - Python dependencies
-- `000.jpg` - Sample anime-style landscape image for testing
+This is a reverse prompt tool for generating descriptive text prompts from images using Google Gemini Vision API. The main components are:
+- `rprompt.py` - Main Python script with ReversePrompter class and spinner UI
+- `requirements.txt` - Python dependencies (google-generativeai, pillow, python-dotenv, requests)
+- `000.jpg`, `image1.jpg` - Sample images for testing
+- `.gitignore` - Prevents committing sensitive files like .env and cache files
 
 ## Development Setup
 
@@ -25,10 +26,8 @@ echo "GEMINI_API_KEY=your-api-key-here" >> ~/.env
 
 Run reverse prompting on an image:
 ```bash
-python rprompt.py                    # Uses default 000.jpg
-python rprompt.py --style artistic   # Uses default 000.jpg with artistic style
-python rprompt.py 000.jpg --output prompt.txt
-python rprompt.py custom.jpg --json --output result.json
+python rprompt.py image.jpg          # Generate prompt from image
+python rprompt.py image.jpg --open   # Generate prompt and open Google AI Studio
 ```
 
 ## Architecture
@@ -36,8 +35,13 @@ python rprompt.py custom.jpg --json --output result.json
 The `ReversePrompter` class handles:
 - Image validation and PIL Image loading
 - Google Gemini Vision API integration (gemini-2.5-flash by default)
-- Multiple prompt styles (detailed, concise, artistic, technical)
 - Environment variable loading from ~/.env file
-- Error handling and response parsing
+- Error handling for blocked content and API failures
 
-The script supports various output formats and prompt styles to suit different use cases for image analysis and description generation using Google's Gemini models.
+The script includes:
+- Animated spinner for visual feedback during API calls
+- Clipboard integration (macOS) for easy prompt copying
+- Google AI Studio browser integration
+- Comprehensive error handling and validation
+
+The tool generates single paragraph prompts suitable for recreating images, focusing on subject, style, composition, colors, lighting, and mood.
