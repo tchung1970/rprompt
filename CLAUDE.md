@@ -7,7 +7,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 This is a reverse prompt tool for generating descriptive text prompts from images using Google Gemini Vision API. The main components are:
 - `rprompt.py` - Main Python script with ReversePrompter class and spinner UI
 - `requirements.txt` - Python dependencies (google-generativeai, pillow, python-dotenv, requests)
-- Sample images for testing (provide your own)
+- `sample.png` - Sample image for testing
 - `.gitignore` - Prevents committing sensitive files like .env and cache files
 
 ## Development Setup
