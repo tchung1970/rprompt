@@ -52,10 +52,10 @@ This will:
 
 ```bash
 # Analyze a photo
-python rprompt.py 000.jpg
+python rprompt.py sample.jpg
 
 # Generate prompt and open AI Studio
-python rprompt.py 000.jpg --open
+python rprompt.py sample.jpg --open
 
 # Works with various formats
 python rprompt.py image.jpeg --open
