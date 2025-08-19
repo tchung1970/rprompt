@@ -35,12 +35,12 @@ Get your API key from [Google AI Studio](https://aistudio.google.com/).
 
 ### Basic Usage
 ```bash
-python rprompt.py image.jpg
+python rprompt.py sample.png
 ```
 
 ### With Browser Integration
 ```bash
-python rprompt.py image.jpg --open
+python rprompt.py sample.png --open
 ```
 
 This will:
