@@ -26,8 +26,8 @@ echo "GEMINI_API_KEY=your-api-key-here" >> ~/.env
 
 Run reverse prompting on an image:
 ```bash
-python rprompt.py image.jpg          # Generate prompt from image
-python rprompt.py image.jpg --open   # Generate prompt and open Google AI Studio
+python rprompt.py sample.png          # Generate prompt from image
+python rprompt.py sample.png --open   # Generate prompt and open Google AI Studio
 ```
 
 ## Architecture
