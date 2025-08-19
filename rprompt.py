@@ -1,6 +1,21 @@
 #!/usr/bin/env python3
 """
-Reverse Prompt Tool - Generate descriptive prompts from images using vision models.
+rprompt.py
+by Thomas Chung
+on 2025-08-19
+
+Reverse Prompt Tool - Generate descriptive prompts from images using Google Gemini Vision API.
+
+This script does the following step-by-step:
+1. Takes an image file path as command line argument
+2. Validates the image file exists and is a supported format using PIL
+3. Loads environment variables from ~/.env to get GEMINI_API_KEY
+4. Initializes Google Gemini 2.5 Flash vision model client
+5. Sends the image and a descriptive prompt request to the API
+6. Displays an animated spinner while waiting for API response
+7. Parses the response and extracts the generated text prompt
+8. Outputs the descriptive prompt to console
+9. Optionally copies prompt to clipboard and opens Google AI Studio (--open flag)
 """
 
 import argparse
